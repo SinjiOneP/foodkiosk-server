@@ -1,0 +1,166 @@
+/* Basic setup */
+:root {
+  --red: #FD1501;
+  --white: #FFFFFF;
+  --black: #000000;
+  --dark: #1d1d1d;
+  --light-gray: #D9D9D9;
+  --transparent: rgba(0, 0, 0, 0.15);
+  --text: var(--black);
+  --text-light: rgba(0, 0, 0, 0.50);
+  
+  /* Font stuff */
+  --font: 'Coolvetica', sans-serif;
+  --small: 12px;
+  --medium: 16px;
+  --large: 24px;
+  --xlarge: 36px;
+  --xxlarge: 64px;
+  
+  /* Spacing */
+  --tiny: 5px;
+  --small-space: 10px;
+  --medium-space: 15px;
+  --big-space: 30px;
+  
+  /* Corners */
+  --round-small: 8px;
+  --round-medium: 16px;
+  --round-big: 36px;
+  
+  /* Effects */
+  --drop-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+/* Main container */
+.order-screen {
+  width: 393px;
+  height: 852px;
+  position: relative;
+  background: var(--white);
+  overflow: hidden;
+}
+
+/* Order container */
+.order {
+  position: absolute;
+  left: 13px;
+  top: 80px;
+  width: 367px;
+  height: 700px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding-right: var(--small-space);
+  mask-image: linear-gradient(to bottom, 
+  transparent 0%,
+  black 15%,
+  black 85%,
+  transparent 100%
+);
+-webkit-mask-image: linear-gradient(to bottom, 
+  transparent 0%,
+  black 15%,
+  black 85%,
+  transparent 100%
+  );
+}
+
+/* Order item */
+.order__item {
+  width: 100%;
+  height: 94px;
+  background: var(--white);
+  border-top: 1px var(--transparent) solid;
+  border-bottom: 1px var(--transparent) solid;
+}
+
+.order__item-container {
+  width: 100%;
+  height: 100%;
+  padding: var(--small-space);
+  display: flex;
+  align-items: center;
+  gap: var(--tiny);
+}
+
+.order__item-image {
+  width: 69px;
+  height: 69px;
+  object-fit: contain;
+}
+
+.order__item-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: var(--tiny);
+}
+
+.order__item-title {
+  color: var(--text);
+  font-size: var(--medium);
+  font-family: var(--font);
+  font-weight: 400;
+}
+
+.order__item-price {
+  color: var(--text-light);
+  font-size: var(--small);
+  font-family: var(--font);
+  font-weight: 400;
+}
+
+/* Quantity selector */
+.quantity {
+  width: 72px;
+  height: 37px;
+  background: var(--white);
+  border-radius: var(--round-medium);
+  border: 1px var(--transparent) solid;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--tiny);
+  margin-right: var(--medium-space);
+}
+
+.quantity__button {
+  color: var(--text);
+  font-size: var(--medium);
+  font-family: var(--font);
+  font-weight: 400;
+  cursor: pointer;
+}
+
+.quantity__value {
+  color: var(--text);
+  font-size: var(--medium);
+  font-family: var(--font);
+  font-weight: 400;
+  text-align: center;
+  width: 20px;
+}
+
+/* Make it work on phones */
+@media (max-width: 393px) {
+  .order-screen {
+    width: 100%;
+    height: 100vh;
+  }
+  
+  .order {
+    width: calc(100% - 26px);
+  }
+}
+
+/* Hide stuff for screen readers */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}

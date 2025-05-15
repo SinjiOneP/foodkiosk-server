@@ -1,0 +1,270 @@
+/* Basic setup */
+:root {
+  --red: #FD1501;
+  --white: #FFFFFF;
+  --black: #000000;
+  --dark: #1d1d1d;
+  --light-gray: #D9D9D9;
+  --transparent: rgba(0, 0, 0, 0.15);
+  --text: var(--black);
+  --text-light: rgba(0, 0, 0, 0.50);
+  
+  /* Font stuff */
+  --font: 'Coolvetica', sans-serif;
+  --small: 12px;
+  --medium: 16px;
+  --large: 24px;
+  --xlarge: 36px;
+  --xxlarge: 64px;
+  
+  /* Spacing */
+  --tiny: 5px;
+  --small-space: 10px;
+  --medium-space: 15px;
+  --big-space: 30px;
+  
+  /* Corners */
+  --round-small: 8px;
+  --round-medium: 16px;
+  --round-big: 36px;
+  
+}
+
+
+/* Category title */
+.category {
+  left: 90px;
+  top: 80px;
+  position: absolute;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+  gap: var(--small-space);
+  display: inline-flex;
+}
+
+.category__title {
+  color: var(--text);
+  font: 400 var(--xxlarge)/46px var(--font);
+  font-stretch: condensed;
+  word-wrap: break-word;
+  
+}
+
+/* Make it work on phones */
+@media (max-width: 393px) {
+  .selection-screen {
+    width: 100%;
+    height: 100vh;
+  }
+  
+  .footer {
+    width: calc(100% - 26px);
+  }
+}
+
+/* Hide stuff for screen readers */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+/* Main nav container */
+.nav {
+  width: 73px;
+  height: 589px;
+  left: 15px;
+  top: 123px;
+  position: absolute;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  gap: var(--medium-space);
+  padding: var(--small-space) 0;
+  
+  /* Cool fade effect at top and bottom */
+  mask-image: linear-gradient(to bottom, 
+    transparent 0%,
+    black 35%,
+    black 65%,
+    transparent 100%
+  );
+  -webkit-mask-image: linear-gradient(to bottom, 
+    transparent 0%,
+    black 35%,
+    black 65%,
+    transparent 100%
+  );
+}
+
+/* Each category button */
+.nav__item {
+  width: 63px;
+  height: 63px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* White background for each button */
+.nav__item-background {
+  width: 63px;
+  height: 63px;
+  position: absolute;
+  background: var(--white);
+  border-radius: var(--round-small);
+  border: 1px var(--transparent) solid;
+}
+
+/* Category icon */
+.nav__item-icon {
+  width: 52.96px;
+  height: 52.96px;
+  position: relative;
+  z-index: 1;
+}
+
+/* Main menu grid */
+.menu {
+  position: absolute;
+  left: 90px;
+  top: 143px;
+  width: 280px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  column-gap: 0;
+  row-gap: var(--medium-space);
+  padding: var(--small-space);
+}
+
+/* Each menu item container */
+.menu__item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--small-space);
+}
+
+/* Item box */
+.menu__item-container {
+  width: 137px;
+  height: 99px;
+  padding: 0 3px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* White card for each item */
+.menu__item-card {
+  width: 137px;
+  height: 99px;
+  position: relative;
+  background: var(--white);
+  border-radius: var(--round-medium);
+  border: 1px var(--transparent) solid;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Content inside card */
+.menu__item-content {
+  height: 148px;
+  padding-top: 80px;
+  padding-bottom: 28px;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  display: inline-flex;
+}
+
+/* Item name */
+.menu__item-title {
+  color: var(--text);
+  font-size: var(--small);
+  font-family: var(--font);
+  font-weight: 400;
+  word-wrap: break-word;
+}
+
+/* Price tag */
+.menu__item-price {
+  color: var(--text-light);
+  font-size: var(--small);
+  font-family: var(--font);
+  font-weight: 400;
+  word-wrap: break-word;
+}
+
+/* Food image */
+.menu__item-image {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+}
+
+/* Quantity selector */
+.quantity {
+  width: 60px;
+  height: 36px;
+  padding: 0 var(--small-space);
+  background: var(--white);
+  box-shadow: var(--drop-shadow);
+  border-radius: var(--round-big);
+  border: 1px solid var(--light-gray);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--tiny);
+  position: relative;
+}
+
+/* Plus/minus buttons */
+.quantity__button {
+  color: var(--text);
+  font-size: var(--xlarge);
+  font-family: var(--font);
+  font-weight: 400;
+  word-wrap: break-word;
+}
+
+/* Number display */
+.quantity__value {
+  color: var(--text);
+  font-size: var(--large);
+  font-family: var(--font);
+  font-weight: 400;
+  word-wrap: break-word;
+}
+
+/* Make it work on phones */
+@media (max-width: 393px) {
+  .menu {
+    width: calc(100% - 103px);
+  }
+}
+
+/* Make grid bigger on larger screens */
+@container (min-width: 400px) {
+  .menu {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@container (min-width: 600px) {
+  .menu {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
