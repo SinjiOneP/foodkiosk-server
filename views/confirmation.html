@@ -3,78 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>McDonald's Kiosk - Order Confirmation</title>
-    <link rel="stylesheet" href="css/confirmation/style.css">
-    <link rel="stylesheet" href="css/reuse.css">
+    <title>McDonald's</title>
+    <link rel="stylesheet" href="../public/css/styles.css">
 </head>
 <body>
     <div class="main-container">
         <header class="header">
             <div class="header__background"></div>
-            <img class="header__logo" src="images/McLogoWhite.png" alt="McDonald's Logo" />
+            <img class="header__logo" src="../public/images/McLogoWhite.png" alt="McDonald's Logo" />
         </header>
 
-        <div class="confirmation-content">
-            <h2 class="confirmation-message">Order Confirmed!</h2>
-            
-            <div class="confirmation-details">
-                <div class="confirmation-detail">
-                    <span class="confirmation-detail__label">Order Number</span>
-                    <span class="confirmation-detail__value">#12345</span>
-                </div>
-                <div class="confirmation-detail">
-                    <span class="confirmation-detail__label">Total Items</span>
-                    <span class="confirmation-detail__value">3</span>
-                </div>
-                <div class="confirmation-detail">
-                    <span class="confirmation-detail__label">Payment Method</span>
-                    <span class="confirmation-detail__value">Credit Card</span>
-                </div>
-                <div class="confirmation-detail">
-                    <span class="confirmation-detail__label">Total Amount</span>
-                    <span class="confirmation-detail__value">€12.86</span>
-                </div>
-                <div class="confirmation-detail">
-                    <span class="confirmation-detail__label">Charity Donation</span>
-                    <span class="confirmation-detail__value">€0.14</span>
-                </div>
-                <div class="confirmation-detail">
-                    <span class="confirmation-detail__label">Final Total</span>
-                    <span class="confirmation-detail__value">€13.00</span>
-                </div>
+        <div class="confirmation">
+            <div class="confirmation__icon">
+                <img src="../public/images/Check.png" alt="Check Icon">
             </div>
-
-            <div class="order-summary">
-                <h3 class="order-summary__title">Your Order</h3>
-                <div class="order-items">
-                    <div class="order-item">
-                        <img class="order-item__image" src="images/Burger.png" alt="Burger">
-                        <div class="order-item__details">
-                            <span class="order-item__name">Fish Burger</span>
-                            <span class="order-item__quantity">x2</span>
-                        </div>
-                        <span class="order-item__price">€8.98</span>
-                    </div>
-                    <div class="order-item">
-                        <img class="order-item__image" src="images/burger.png" alt="Fries">
-                        <div class="order-item__details">
-                            <span class="order-item__name">Big Mac</span>
-                            <span class="order-item__quantity">x1</span>
-                        </div>
-                        <span class="order-item__price">€3.88</span>
-                    </div>
+            <div class="confirmation__title">Order Confirmed!</div>
+            <div class="confirmation__message">Your order has been successfully placed.</div>
+            <div class="confirmation__details">
+                <div class="confirmation__detail">
+                    <div class="confirmation__detail-label">Order Number</div>
+                    <div class="confirmation__detail-value">#12345</div>
+                </div>
+                <div class="confirmation__detail">
+                    <div class="confirmation__detail-label">Estimated Time</div>
+                    <div class="confirmation__detail-value">10-15 minutes</div>
                 </div>
             </div>
         </div>
-
-        <footer class="footer">
-            <div class="footer__cart-info">
-                <span class="footer__text">Thank you for your order!</span>
-            </div>
-            <a href="payment.html" class="footer__button">
-                <span class="footer__text">< Back</span>
-            </a>
-        </footer>
     </div>
 </body>
-</html>
+</html> 
