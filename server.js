@@ -1,28 +1,41 @@
 const express = require('express');
 const app = express();
+const path = require('path');
 const port = 3000;
 
-// Stel de view engine in op EJS
+// Set up EJS
 app.set('view engine', 'ejs');
-app.set('views', './views');
+app.set('views', path.join(__dirname, 'views'));
 
-// Maak de 'public' map beschikbaar voor statische bestanden
-app.use(express.static('public'));
+// Serve static files from the public directory
+app.use(express.static(path.join(__dirname, 'public')));
 
 // Routes
 app.get('/', (req, res) => {
-  res.render('index', { title: 'Welkom bij FoodKiosk' });
+  res.render('index');
+});
+
+app.get('/welcome', (req, res) => {
+  res.render('welcome');
 });
 
 app.get('/selection', (req, res) => {
-  res.render('selection', { title: 'Kies je maaltijd' });
+  res.render('selection');
 });
 
 app.get('/cart', (req, res) => {
-  res.render('cart', { title: 'Jouw winkelwagen' });
+  res.render('cart');
+});
+
+app.get('/payment', (req, res) => {
+  res.render('payment');
+});
+
+app.get('/confirmation', (req, res) => {
+  res.render('confirmation');
 });
 
 // Server starten
 app.listen(port, () => {
-  console.log(`Server draait op http://localhost:${port}`);
+  console.log(`Server is running on http://localhost:${port}`);
 });

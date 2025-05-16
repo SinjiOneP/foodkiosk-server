@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>McDonald's</title>
-    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/reuse.css">
+    <link rel="stylesheet" href="/css/confirmation/style.css">
 </head>
 <body>
     <div class="main-container">
@@ -13,23 +14,32 @@
             <img class="header__logo" src="/images/McLogoWhite.png" alt="McDonald's Logo" />
         </header>
 
-        <div class="confirmation">
-            <div class="confirmation__icon">
-                <img src="/images/Check.png" alt="Check Icon">
-            </div>
-            <div class="confirmation__title">Order Confirmed!</div>
-            <div class="confirmation__message">Your order has been successfully placed.</div>
-            <div class="confirmation__details">
-                <div class="confirmation__detail">
-                    <div class="confirmation__detail-label">Order Number</div>
-                    <div class="confirmation__detail-value">#12345</div>
+        <div class="confirmation-content">
+            <div class="confirmation-message">Order Confirmed!</div>
+            <div class="confirmation-message">Your order has been successfully placed.</div>
+            <div class="confirmation-details">
+                <div class="confirmation-detail">
+                    <div class="confirmation-detail__label">Order Number</div>
+                    <div class="confirmation-detail__value">#12345</div>
                 </div>
-                <div class="confirmation__detail">
-                    <div class="confirmation__detail-label">Estimated Time</div>
-                    <div class="confirmation__detail-value">10-15 minutes</div>
+                <div class="confirmation-detail">
+                    <div class="confirmation-detail__label">Estimated Time</div>
+                    <div class="confirmation-detail__value">10-15 minutes</div>
                 </div>
             </div>
         </div>
+
+        <footer class="footer">
+            <div class="footer__cart-info">
+                <span class="footer__text">X ITEMS<br/>Price</span>
+            </div>
+            <a href="/payment" class="footer__button">
+                <span class="footer__text"> < Back</span>
+            </a>
+            <a href="/" class="footer__button">
+                <span class="footer__text">Start New Order > </span>
+            </a>
+        </footer>
     </div>
 </body>
 </html> 
