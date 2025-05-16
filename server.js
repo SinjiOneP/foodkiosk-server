@@ -6,35 +6,16 @@ const port = process.env.PORT || 3000;
 
 // Set up EJS
 app.set('view engine', 'ejs');
-app.set('views', path.join(__dirname, 'views'));
+app.set('views', path.join(__dirname, 'views/pages'));
 
 // Serve static files from the public directory
 app.use(express.static(path.join(__dirname, 'public')));
 
-// Routes
-app.get('/', (req, res) => {
-  res.render('index');
-});
+// Import routes
+const routes = require('./routes');
 
-app.get('/welcome', (req, res) => {
-  res.render('welcome');
-});
-
-app.get('/selection', (req, res) => {
-  res.render('selection');
-});
-
-app.get('/cart', (req, res) => {
-  res.render('cart');
-});
-
-app.get('/payment', (req, res) => {
-  res.render('payment');
-});
-
-app.get('/confirmation', (req, res) => {
-  res.render('confirmation');
-});
+// Use routes
+app.use('/', routes);
 
 // Server starten
 app.listen(port, '0.0.0.0', () => {

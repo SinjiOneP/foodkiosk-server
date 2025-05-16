@@ -7,27 +7,14 @@ services:
       - "3000:3000"
     environment:
       - NODE_ENV=development
-      - DB_HOST=db
+      - DB_HOST=db.uurnofauljwfceevleoo.supabase.co
       - DB_USER=postgres
-      - DB_PASSWORD=postgres
-      - DB_NAME=foodkiosk
+      - DB_PASSWORD=saskia200314
+      - DB_NAME=postgres
       - DB_PORT=5432
-    depends_on:
-      - db
     volumes:
       - .:/app
       - /app/node_modules
-
-  db:
-    image: postgres:15
-    ports:
-      - "5432:5432"
-    environment:
-      - POSTGRES_USER=postgres
-      - POSTGRES_PASSWORD=postgres
-      - POSTGRES_DB=foodkiosk
-    volumes:
-      - postgres_data:/var/lib/postgresql/data
 
 volumes:
   postgres_data: 
